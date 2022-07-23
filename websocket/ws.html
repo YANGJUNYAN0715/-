@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>这个页面是客户端</h1>
+    <input type="text" id="inp">
+    <button id="btn" onclick="send()">发送消息</button>
+    <script>
+        function send() {
+            let value = document.getElementById('inp').value;
+            let ws = new WebSocket('ws://localhost:5000')
+            ws.onopen = function (evt) {
+                console.log('连接开启')
+                ws.send(value)
+            }
+            ws.onmessage = function (evt) {
+                // console.log(evt)
+                // ws.send('我是客户端发的第二条消息')
+                console.log('服务器发过来的消息是:' + evt.data)
+                ws.close()
+            }
+        }
+    </script>
+</body>
+
+</html>

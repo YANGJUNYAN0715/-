@@ -8,6 +8,10 @@ const wss = new Websocket.Server({ port: 5000 });
 wss.on("connection", function (ws) {
   ws.on("message", function (message) {
     console.log("客户端发来的消息是:" + message);
-    ws.send("hi，我接收到了消息，我是服务器");
+    if (message == "nice to meet you") {
+      ws.send("I am nice to meet you too");
+    } else if (message == "good good study") {
+      ws.send("day day up");
+    }
   });
 });
