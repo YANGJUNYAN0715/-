@@ -11,7 +11,10 @@
 <body>
     <script>
         var arr = [1, 2, 3, 4];
-        console.log(Math.max.call(Math,arr[0],arr[1],arr[2],arr[3]))
+        console.log(Math.max.call(Math, arr[0], arr[1], arr[2], arr[3]))
+        var reg = new RegExp('^1([358][0-9]|4[579]|66|7[0135678]|9[89])[0-9]{8}$');
+        var str = "13957396009";
+        console.log(reg.test(str));
     </script>
 </body>
 
