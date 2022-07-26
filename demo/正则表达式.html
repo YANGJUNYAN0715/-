@@ -7,6 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <cite>igor</cite>
+    <div>
+        <label><input type="checkbox" />记住我</label>
+    </div>
+    <div>
+        <input type="checkbox"><label for="checkbox">记住我</label>
+    </div>
+    <div>
+        <input type="checkbox" id="c1">记住我</label>
+    </div>
+    <div>
+        <input type="checkbox" id="c2"><label for="c2">记住我</label>
+    </div>
 </head>
 
 <body>
@@ -78,6 +90,11 @@
         console.log(p);
         console.log(p.a);
         console.log(p.b);
+        for (var i = 0; i < 5; i++) {
+            requestAnimationFrame(() => console.log(i));
+        }
+        console.log([] instanceof Array);
+        console.log(undefined == null);
     </script>
 </body>
 
