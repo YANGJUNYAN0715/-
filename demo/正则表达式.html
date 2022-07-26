@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <cite>igor</cite>
 </head>
 
 <body>
@@ -15,7 +16,68 @@
         console.log(Math.max.call(Math, arr[0], arr[1], arr[2], arr[3]))
         var reg = new RegExp('^1([358][0-9]|4[579]|66|7[0135678]|9[89])[0-9]{8}$');
         var str = "13957396009";
-        console.log(reg.test(str));
+        var reg2 = new RegExp('#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})')
+        var str2 = '#aaca';
+        console.log(reg2.test(str2));
+        // console.log(reg.test(str));
+        console.log('');
+        console.log(typeof ''.prototype);
+        console.log(typeof ''._proto_);
+        console.log(typeof ''._proto_ === typeof ''.prototype);
+        var a = 1;
+
+        function test() {
+            console.log(a);
+            if (false) {
+                var a = 2;
+            }
+        }
+        test();
+        var str1 = new RegExp("e");
+        document.write(str1.exec("hello"));
+
+        var txt = new Array('tim', 'kim')
+        console.log(txt);
+
+        var arr = new Array(3);
+        for (var i = 0; i < arr.length; i++) {
+            arr[i] = i;
+        }
+        console.log(arr);
+
+        function A(x) {
+            this.x = x
+        }
+        A.prototype.x = 1;
+
+        function B(x) {
+            this.x = x;
+        }
+        B.prototype = A.prototype;
+        var a = new A(2),
+            b = new B(3);
+        delete b.x
+        console.log(a);
+        console.log(b);
+        console.log(a.x);
+        console.log(b.x);
+        console.log(typeof (1.2));
+        x = {
+            x: 1
+        }
+        y = {
+            y: 1
+        }
+        console.log(x === y);
+
+        Function.prototype.a = "a"
+        Object.prototype.b = "b"
+
+        function Person() {}
+        var p = new Person();
+        console.log(p);
+        console.log(p.a);
+        console.log(p.b);
     </script>
 </body>
 
