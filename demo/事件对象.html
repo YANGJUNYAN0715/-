@@ -12,9 +12,13 @@
     <div>1</div>
 </body>
 <script>
+    // e.target是触发点击事件的对象
+    // this返回的是绑定事件的对象（元素）
     var div = document.querySelector('div');
     div.onclick = function (e) {
-        console.log(e)
+        e = e || window.event
+        console.log(e.target);
+        console.log(this);
     }
 </script>
 
