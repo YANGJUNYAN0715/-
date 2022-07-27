@@ -6,18 +6,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
 </head>
 
 <body>
+    <div class="square">1</div>
+    <div class="square">2</div>
+    <div class="square">3</div>
+    <script>
+        var divs = document.querySelectorAll("div");
+        // 传统方式解绑事件
+        divs[0].onclick = function () {
+            alert(11);
+            divs[0].onclick = null;
+        }
+        divs[1].addEventListener('click', fn)
 
+        function fn() {
+            alert(22);
+            divs[1].removeEventListener('click', fn);
+        }
+
+        divs[2].attachEvent('onclick', fn1);
+
+        function fn1() {
+            alert(33);
+            divs[2].detachEvent('onclick', fn1)
+        }
+    </script>
 </body>
 <style>
-    div {
-        width: 100 px;
-        height: 100 px;
+    .square {
+        width: 100px;
+        height: 100px;
         background-color: pink;
     }
 </style>
