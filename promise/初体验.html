@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>抽奖</button>
+    <script>
+      function getRandom(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+      }
+      var btn = document.querySelector("button");
+      btn.addEventListener("click", function () {
+        const p = new Promise((resolve, reject) => {
+          setTimeout(() => {
+            let n = getRandom(1, 100);
+            if (n <= 30) {
+              resolve(n);
+            } else {
+              reject(n);
+            }
+          }, 1000);
+        });
+        console.log(p);
+        p.then(
+          (value) => {
+            console.log("恭喜你中奖了,您的中奖数字为" + value);
+            alert("恭喜你中奖了,您的中奖数字为" + value);
+          },
+          (reason) => {
+            console.log("很遗憾，没有中奖，您的号码为" + reason);
+            alert("很遗憾，没有中奖，您的号码为" + reason);
+          }
+        );
+      });
+    </script>
+  </body>
+</html>
