@@ -8,3 +8,9 @@ exports = {
   age: 20,
 };
 console.log(exports === module.exports);
+
+const moment = require("moment");
+const dt = moment().format("YYYY-MM-DD HH:mm:ss");
+const dt2 = moment().format("YYYY-MM-DD");
+console.log(dt2);
+console.log(dt);
