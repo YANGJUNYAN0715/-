@@ -1,0 +1,137 @@
+<html>
+  <head>
+	  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>i5ting_ztree_toc:Nodejs</title>
+		<link href="toc/style/github-bf51422f4bb36427d391e4b75a1daa083c2d840e.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/style/github2-d731afd4f624c99a4b19ad69f3083cd6d02b81d5.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/zTreeStyle/zTreeStyle.css" media="all" rel="stylesheet" type="text/css"/>
+	  <style>
+		pre {
+		    counter-reset: line-numbering;
+		    border: solid 1px #d9d9d9;
+		    border-radius: 0;
+		    background: #fff;
+		    padding: 0;
+		    line-height: 23px;
+		    margin-bottom: 30px;
+		    white-space: pre;
+		    overflow-x: auto;
+		    word-break: inherit;
+		    word-wrap: inherit;
+		}
+
+		pre a::before {
+		  content: counter(line-numbering);
+		  counter-increment: line-numbering;
+		  padding-right: 1em; /* space after numbers */
+		  width: 25px;
+		  text-align: right;
+		  opacity: 0.7;
+		  display: inline-block;
+		  color: #aaa;
+		  background: #eee;
+		  margin-right: 16px;
+		  padding: 2px 10px;
+		  font-size: 13px;
+		  -webkit-touch-callout: none;
+		  -webkit-user-select: none;
+		  -khtml-user-select: none;
+		  -moz-user-select: none;
+		  -ms-user-select: none;
+		  user-select: none;
+		}
+
+		pre a:first-of-type::before {
+		  padding-top: 10px;
+		}
+
+		pre a:last-of-type::before {
+		  padding-bottom: 10px;
+		}
+
+		pre a:only-of-type::before {
+		  padding: 10px;
+		}
+
+		.highlight { background-color: #ffffcc } /* RIGHT */
+		</style>
+  </head>
+  <body>
+	  <div>
+				<div style='width:25%;'>
+						<ul id="tree" class="ztree" style='width:100%'>
+
+						</ul>
+				</div>
+        <div id='readme' style='width:70%;margin-left:20%;'>
+          	<article class='markdown-body'>
+            	<h3 id="nodejs">Nodejs</h3>
+<p><img src="photo/image-20220801095516621.png" alt="image-20220801095516621"></p>
+<p>为什么js可以在浏览器中被执行</p>
+<p>js本质上就是字符串，浏览器中都有js解析引擎，Chrome浏览器用的V8</p>
+<p><img src="photo/image-20220801100025563.png" alt="image-20220801100025563"></p>
+<p><img src="photo/image-20220801101645346.png" alt="image-20220801101645346"></p>
+<ol>
+<li>v8引擎负责解析和执行js代码</li>
+<li>内置api是运行环境提供的特殊接口，只能在所属运行环境代码中被调用</li>
+</ol>
+<p>js能做后端开发吗？</p>
+<p>nodejs是一个后端运行环境，能做后端开发</p>
+<p>什么是nodejs?nodejs is a js runtime built on Chrome&#39;s v8 js engine.</p>
+<p><img src="photo/image-20220801102422498.png" alt="image-20220801102422498"></p>
+<p><img src="photo/image-20220801102540352.png" alt="image-20220801102540352"></p>
+<p><img src="photo/image-20220801102632010.png" alt="image-20220801102632010"></p>
+<p><img src="photo/image-20220801102907714.png" alt="image-20220801102907714"></p>
+<p><img src="photo/image-20220801104242170.png" alt="image-20220801104242170"></p>
+<p><img src="photo/image-20220801104629693.png" alt="image-20220801104629693"></p>
+<p><img src="photo/image-20220801104735320.png" alt="image-20220801104735320"></p>
+<p><img src="photo/image-20220801111526383.png" alt="image-20220801111526383"></p>
+<p><img src="photo/image-20220801192414230.png" alt="image-20220801192414230"></p>
+<p><img src="photo/image-20220801220919828.png" alt="image-20220801220919828"></p>
+<p><img src="photo/image-20220801221303103.png" alt="image-20220801221303103"></p>
+<p><img src="photo/image-20220801221315515.png" alt="image-20220801221315515"></p>
+<p><img src="photo/image-20220801222310455.png" alt="image-20220801222310455"></p>
+<p><img src="photo/image-20220801222318779.png" alt="image-20220801222318779"></p>
+<p> <img src="photo/image-20220801230422080.png" alt="image-20220801230422080"></p>
+<p><img src="photo/image-20220801231143049.png" alt="image-20220801231143049"></p>
+<p><img src="photo/image-20220802001910006.png" alt="image-20220802001910006"></p>
+<p><img src="photo/image-20220802002043772.png" alt="image-20220802002043772"></p>
+<p>在实际应用中，url80端口可以被省略</p>
+<p><img src="photo/image-20220802002323454.png" alt="image-20220802002323454"></p>
+<p><img src="photo/image-20220802002400849.png" alt="image-20220802002400849"></p>
+<h3 id="module-exports-exports-">module.exports和exports指向问题</h3>
+<p><img src="photo/image-20220802011647490.png" alt="image-20220802011647490"></p>
+<p><img src="photo/image-20220803112720593.png" alt="image-20220803112720593"></p>
+<p><img src="photo/image-20220803112944170.png" alt="image-20220803112944170"></p>
+<p><img src="photo/image-20220803113104101.png" alt="image-20220803113104101"></p>
+<p><img src="photo/image-20220803113247147.png" alt="image-20220803113247147"></p>
+<p><img src="photo/image-20220803113319320.png" alt="image-20220803113319320"></p>
+<p><img src="photo/image-20220803113454723.png" alt="image-20220803113454723"></p>
+<p><img src="photo/image-20220803171107291.png" alt="image-20220803171107291"></p>
+<p><img src="photo/image-20220803171632174.png" alt="image-20220803171632174"></p>
+<p><img src="photo/image-20220803172100829.png" alt="image-20220803172100829"></p>
+<p><img src="photo/image-20220803233159811.png" alt="image-20220803233159811"></p>
+<p>npm install xxx -D</p>
+<p><img src="photo/image-20220803233305247.png" alt="image-20220803233305247"></p>
+
+          	</article>
+        </div>
+		</div>
+  </body>
+</html>
+<script type="text/javascript" src="toc/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="toc/js/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="toc/js/ztree_toc.js"></script>
+<script type="text/javascript" src="toc_conf.js"></script>
+
+<SCRIPT type="text/javascript" >
+<!--
+$(document).ready(function(){
+    var css_conf = eval(markdown_panel_style);
+    $('#readme').css(css_conf)
+    
+    var conf = eval(jquery_ztree_toc_opts);
+		$('#tree').ztree_toc(conf);
+});
+//-->
+</SCRIPT>
