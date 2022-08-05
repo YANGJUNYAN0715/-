@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>asdadasdcdasdsd</p>
+    <p>asdadasdcdasdsd</p>
+    <p>asdadasdcdasdsd</p>
+    <p>asdadasdcdasdsd</p>
+    <p>asdadasdcdasdsd</p>
+    <p>asdadasdcdasdsd</p>
+    <p>asdadasdcdasdsd</p>
+    <p>asdadasdcdasdsd</p>
+    <p>asdadasdcdasdsd</p>
+    <p>asdadasdcdasdsd</p>
+    <p>asdadasdcdasdsd</p>
+    <p>asdadasdcdasdsd</p>
+    <p>asdadasdcdasdsd</p>
+    <p>asdadasdcdasdsd</p>
+    <p>asdadasdcdasdsd</p>
+    <p>asdadasdcdasdsd</p>
+    <p>asdadasdcdasdsd</p>
+    <p>asdadasdcdasdsd</p>
+    <p>asdadasdcdasdsd</p>
+    <p>asdadasdcdasdsd</p>
+    <p>asdadasdcdasdsd</p>
+
+    <p><img data-src="./图片懒加载.jpg" alt="" /></p>
+    <p><img data-src="./图片懒加载.jpg" alt="" /></p>
+    <p><img data-src="./图片懒加载.jpg" alt="" /></p>
+
+    <p>asdadasdcdasdsd</p>
+    <p>asdadasdcdasdsd</p>
+    <p>asdadasdcdasdsd</p>
+
+    <p><img data-src="./图片懒加载.jpg" alt="" /></p>
+
+    <script>
+      const images = document.querySelectorAll("img");
+      //   const callback = (entries) => {
+      //     entries.forEach((entry) => {
+      //       if (entry.isIntersecting) {
+      //         const image = entry.target;
+      //         const data_src = image.getAttribute("data-src");
+      //         image.setAttribute("src", data_src);
+      //         observer.unobserve(image);
+      //         console.log("触发");
+      //       }
+      //     });
+      //   };
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const image = entry.target;
+            const data_src = image.getAttribute("data-src");
+            image.setAttribute("src", data_src);
+            observer.unobserve(image);
+            console.log("触发");
+          }
+        });
+      });
+      images.forEach((image) => {
+        observer.observe(image);
+      });
+    </script>
+  </body>
+</html>
