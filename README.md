@@ -1,2 +1,2 @@
-# Front_end_Interview_Notebook
-前端面经
+# Front_end_Study_Note
+前端学习笔记
