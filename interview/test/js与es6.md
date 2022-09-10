@@ -151,9 +151,16 @@ let const 是局部作用域，var是全局作用域，var有变量提升
 
 let const不能重复声明同一个变量名
 
+const必须初始化变量
+
 #### Symbol的数据类型及特性？
 
-基础数据类型 
+基本数据类型，
+
+```js
+let abc = Symbol('123');
+console.log(abc.description)
+```
 
 #### Symbol.iterator的作用？
 
@@ -175,7 +182,7 @@ for of只能遍历有Iterator接口的数据结构，例如Map, Set
 
 #### 箭头函数与普通函数的区别？
 
-箭头函数没有this，
+箭头函数没有this，没有new，没有arguments，没有原型和super
 
 #### 箭头函数的this的指向？
 
