@@ -1,6 +1,6 @@
 #### 什么是作用域，作用域有哪些?
 
-可访问变量的集合，局部，全局
+可访问变量的集合，局部作用域，全局作用域
 
 #### 预编译的过程有哪些？
 
@@ -14,11 +14,11 @@
 ```js
 var foo = 1;
 function bar() {
-    console.log(foo);  
+    console.log(foo);  // undefined 
     if (!foo) {
         var foo = 10;
     }
-    console.log(foo); 
+    console.log(foo); // 10
 }
 
 bar();
@@ -57,8 +57,8 @@ console.log(c);
 ```
 
 #### js的数据类型有哪些？
-基本数据类型：
-引用数据类型：
+基本数据类型：Undefined Null Symbol Number Boolean String BigInt 
+引用数据类型：Function Array Object Date
 
 #### 什么是深拷贝 深拷贝有哪些方式？
 
@@ -103,21 +103,53 @@ new new Foo().getName();
 
 #### 什么是同源策略？图片资源是否存在跨域？
 
+如果两个页面（接口）的协议、域名、端口号相同，则被认为是同源的。
+
+无法读取非同源策略下的cookie, localstorage,解除dom操作以及无法向非同源的地址发送ajax请求。
+
+用href src请求下来的不存在跨域问题。
+
 #### 解决跨域的方式有哪些？
 
-jsonp cors nginx
+jsonp cros nginx
 
 #### js设计模式有哪些？
 
+工厂方法模式，单例模式，装饰者模式，观察者模式
+
 #### 什么是原型，原型链？
+
+类.prototype指向的就是原型对象，原型对象能存放实例对象公有属性和公有方法
+
+通过原型对象的.__ proto __可以一直往上查找，形成链条一样的结构，这个结构就是原型链
 
 #### instanceof 为什么可以区分数组和对象，比较的是什么？
 
+a(对象) instanceOf b(构造函数) 会看一个对象在原型链中是否存在一个构造函数的prototype
+
+比如a.__ proto __ . __ proto __=== b.prototype，那么就是true
+
 #### 什么是防抖，节流 有哪些运用场景？
+
+防抖是事件被触发之后，隔一段时间执行回调函数，如果在n秒内被触发，则重新计时。
+
+适用于类似输入框输入字时候。
+
+节流是一个单位时间内，只能触发一次函数。如果这个时间内多次触发函数，只有一次生效。
+
+scroll计算滚动条位置时候。
 
 #### web性能优化能做哪些事情？
 
 #### let const和var的区别？
+
+这个我熟
+
+const的数据值一般不能改变
+
+let const 是局部作用域，var是全局作用域，var有变量提升
+
+let const不能重复声明同一个变量名
 
 #### Symbol的数据类型及特性？
 
@@ -131,11 +163,23 @@ jsonp cors nginx
 
 #### iterator接口的作用？
 
+遍历对象呗
+
 #### for of与for in的区别？
+
+for in 遍历的是keys，在数组中输出的是Index, for of遍历的是value,
+
+for of只能遍历有Iterator接口的数据结构，例如Map, Set
+
+对于没有iteratoe接口的数据结构，可以使用Object.keys方式得到属性值（这个属性值不包括原型对象上定义的属性值）
 
 #### 箭头函数与普通函数的区别？
 
+箭头函数没有this，
+
 #### 箭头函数的this的指向？
+
+windows
 
 #### 代码的执行结果是什么？
 ```js
