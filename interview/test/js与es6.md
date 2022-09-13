@@ -36,6 +36,7 @@ function fn () {
     func()
 }
 fn()
+// 声明式 表达式
 ```
 
 ```js
