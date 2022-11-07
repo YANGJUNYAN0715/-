@@ -8,7 +8,7 @@ const obj = {
   },
 };
 function deepClone(obj) {
-  if (obj !== "object" || obj == null) {
+  if (typeof obj !== "object" || obj == null) {
     return obj;
   }
   let result;
