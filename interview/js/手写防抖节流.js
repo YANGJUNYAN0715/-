@@ -27,16 +27,3 @@ function throttle(funs, wait) {
     }, wait);
   };
 }
-
-function throttle(funs, delay) {
-  let timer;
-  return function () {
-    let arg = arguments;
-    if (timer) {
-      clearTimeout(timer);
-    }
-    timer = setTimeout(() => {
-      funs(...arg);
-    }, delay);
-  };
-}
