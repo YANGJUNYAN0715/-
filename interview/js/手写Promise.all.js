@@ -1,6 +1,6 @@
-const PromiseAll = (arr) => {
-  const promises = Array.from(arr);
-  const n = promises.length;
+const PromiseAll = (iterator) => {
+  const promises = Array.from(iterator);
+  const len = promises.length;
   let index = 0;
   let data = [];
   return new Promise((resolve, reject) => {
@@ -8,7 +8,7 @@ const PromiseAll = (arr) => {
       promises[i]
         .then((res) => {
           data[i] = res;
-          if (index == n) {
+          if ((index = len)) {
             resolve(data);
             index++;
           }
