@@ -8,9 +8,9 @@ const PromiseAll = (iterator) => {
       promises[i]
         .then((res) => {
           data[i] = res;
+          index++;
           if ((index = len)) {
             resolve(data);
-            index++;
           }
         })
         .catch((err) => {
