@@ -1,25 +1,25 @@
 var isValid = function (s) {
   const n = s.length;
-  if (n % 2 === 1) {
+  if (n % 2 == 1) {
     return false;
   }
-  const pairs = new Map([
+  let temp = [];
+  let map = new Map([
+    ["}", "{"],
     [")", "("],
     ["]", "["],
-    ["}", "{"],
   ]);
-  const stk = [];
-  for (let ch of s) {
-    if (pairs.has(ch)) {
-      if (!stk.length || stk[stk.length - 1] !== pairs.get(ch)) {
+  for (ch of s) {
+    if (map.get(ch)) {
+      if (!temp.length || temp[temp.length - 1] != map.get(ch)) {
         return false;
       }
-      stk.pop();
+      temp.pop();
     } else {
-      stk.push(ch);
+      temp.push(ch);
     }
   }
-  return !stk.length;
+  return !temp.length;
 };
 s1 = "()";
 s2 = "()[]{}";
